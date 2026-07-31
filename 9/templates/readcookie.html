@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Stored</title>
+</head>
+<body>
+    <h1>Cookie Stored</h1>
+    {% if request.args.get('username') or request.args.get('city') %}
+        <p>Saved username: {{ request.args.get('username') }}</p>
+        <p>Saved city: {{ request.args.get('city') }}</p>
+    {% else %}
+        <p>Your cookie values were stored successfully.</p>
+    {% endif %}
+    <p><a href="/showcookie">Show saved cookie</a></p>
+</body>
+</html>
